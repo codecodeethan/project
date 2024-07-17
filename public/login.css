@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+World:wght@400;700&display=swap');
+
+/* Base styles for the entire HTML document */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the background image */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+/* Dark overlay to darken the background image */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: -1;
+}
+
+/* Container for the login form and information */
+.login-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the login form section */
+.login-form {
+    background-color: #123456;
+    padding: 40px;
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Helvetica World', Arial, sans-serif;
+}
+
+/* Styles for the headings in the login form */
+.login-form h2 {
+    margin: 10px 0;
+}
+
+/* Styles for the input fields in the login form */
+.login-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+}
+
+/* Styles for the login button */
+.login-form button {
+    padding: 10px;
+    background-color: #f0a500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Helvetica World', Arial, sans-serif;
+}
+
+/* Styles for the information section with the logo and portal name */
+.login-info {
+    width: 50%;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Styles for the logo image in the information section */
+.login-info img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 0;  
+}
+
+/* Styles for the portal name in the information section */
+.login-info h3 {
+    color: #123456;
+    font-size: 24px;
+    margin-top: -15px;  
+    margin-left: 10px;
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-weight: normal;  
+}
+
+/* Styles for the close button in the top-right corner */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 1;
+}
+
+/* Hover effect for the close button */
+.close-button:hover {
+    color: red;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .login-form, .login-info {
+        width: 100%;
+    }
+
+    /* Change the color of the close button when it overlaps the blue part */
+    .close-button {
+        color: white;
+    }
+
+    .login-form .close-button:hover {
+        color: #f0a500;
+    }
+}

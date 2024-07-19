@@ -1,0 +1,145 @@
+/* Base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #1D3758;
+    color: white;
+}
+
+/* Q&A Section styles */
+.qa-section {
+    text-align: center;
+    padding: 20px;
+    background-image: url('images/Ris.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.qa-section h1 {
+    font-size: 100px; /* Increase the size of GENERAL Q&A */
+    margin-bottom: 20px;
+}
+
+.sort-by {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Vertically center align the text */
+    position: absolute;
+    top: 210px; /* Adjust top position */
+    right: 165px; /* Adjust right position */
+    z-index: 2; /* Ensure it stays above other elements */
+}
+
+.sort-by span {
+    margin-left: 10px;
+    font-size: 24px; /* Increase the size of Sort by and Flair */
+}
+
+.sort-by .flair {
+    color: #f0a500;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sort-by img {
+    width: 30px; /* Adjust the size of the icon */
+    height: 30px;
+    cursor: pointer;
+}
+
+.qa-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0px; /* Square corners */
+    margin: 0 auto;
+    max-width: 80%; /* Adjust width to be narrower */
+    position: relative; /* Change position to relative */
+}
+
+.qa-item {
+    background: transparent;
+    padding: 20px;
+    text-align: left;
+    color: #1D3758; /* Change text color */
+    border-bottom: 1px solid #ddd; /* Separator line */
+}
+
+.qa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.qa-header h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.flair-tag {
+    background-color: #f0a500;
+    border-radius: 15px;
+    padding: 5px 15px;
+    color: white;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.qa-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #1D3758; /* Change text color */
+}
+
+.qa-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qa-footer i {
+    color: #1D3758;
+    font-size: 20px;
+}
+
+.create-question {
+    background-color: #f0a500;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Rounded corners */
+    color: white;
+    font-size: 20px;
+    font-family: 'Canva Sans', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    bottom: -60px; /* Adjust to be below the white box */
+    right: 0px; /* Adjust position to be right aligned with the white box */
+}
+
+.create-question:hover {
+    background-color: #d18b00;
+}
+
+.qa-footer img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.back-button {
+    position: absolute;
+    bottom: -60px; /* Adjust to be below the white box */
+    left: 0px; /* Adjust position to be left aligned with the white box */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}

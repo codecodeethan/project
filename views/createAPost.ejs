@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Post</title>
+    <link rel="stylesheet" href="createAPost.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Canva+Sans&display=swap" rel="stylesheet">
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+    <section class="qa-section">
+        <div class="qa-container">
+            <input type="text" class="title-input" placeholder="TITLE HERE...">
+            <div id="editor"></div> <!-- Quill Editor Container -->
+            <button class="post-question">Post Question</button>
+        </div>
+        <div class="back-button">
+            <img src="images/back-arrow.png" alt="Back Arrow">
+        </div>
+    </section>
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Type here...'
+    });
+});
+    </script>
+</body>
+</html>

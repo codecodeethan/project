@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Posts</h1>
+        <div id="posts">
+            <% list.forEach(post => { %>
+                <div class="post" id="post-<%= post._id %>">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.content %></p>
+                    <button onclick="likePost('<%= post._id %>')">Like</button>
+                    <span id="like-count-<%= post._id %>"><%= post.like_count || 0 %> likes</span>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <script>
+        const token = '<%= token %>'; // Token should be passed from the server
+
+        async function likePost(postId) {
+            const response = await fetch('/like', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ post_Id: postId })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                updatePostList(data.post_list);
+            } else {
+                console.error('Failed to like the post');
+            }
+        }
+
+        function updatePostList(posts) {
+            posts.forEach(post => {
+                const likeCountElement = document.getElementById(`like-count-${post._id}`);
+                if (likeCountElement) {
+                    likeCountElement.textContent = `${post.like_count || 0} likes`;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
